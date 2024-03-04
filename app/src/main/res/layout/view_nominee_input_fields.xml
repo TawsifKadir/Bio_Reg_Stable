@@ -233,7 +233,8 @@
 
             <EditText
                 style="@style/AppEditText.Form.Number"
-                android:maxLength="2"
+                android:maxLength="25"
+                android:inputType="text"
                 android:hint="Please Specify"
                 android:id="@+id/etOtherWork"/>
 

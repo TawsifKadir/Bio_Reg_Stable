@@ -1,5 +1,6 @@
 package com.xplo.code.ui.dashboard.model
 
+import android.util.Log
 import com.xplo.code.core.ext.toBool
 
 
@@ -138,12 +139,14 @@ fun List<Finger>?.getReportRows(): List<ReportRow> {
     val items = arrayListOf<ReportRow>()
     val fingers = this
 
+
+
     //if (finger == null) return items
 
     items.add(
         ReportRow(
             "Left Thumb:",
-            fingers.isCaptured("LT").toString(),
+            fingers.isCaptured("LT",).toString(),
             "Right Thumb: ",
             fingers.isCaptured("RT").toString(),
         )

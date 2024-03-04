@@ -292,6 +292,7 @@ class AlPreviewFragment : BasicFormFragment(), AlternateContract.PreviewView {
         for (item in rows) {
             val view = getRowView(item)
             binding.viewPreview.blockFinger.addView(view)
+
         }
     }
 
