@@ -40,6 +40,7 @@ import com.xplo.code.ui.dashboard.model.isOk
 
 import com.xplo.code.BuildConfig
 import com.xplo.code.core.ext.gone
+import com.xplo.code.core.ext.isVisible
 import com.xplo.code.core.ext.visible
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -104,6 +105,7 @@ class HhForm2PerInfoFragment : BasicFormFragment(), HouseholdContract.Form2View,
     private lateinit var etOthersText: EditText
     private lateinit var idType: LinearLayout
     private lateinit var etIdType: EditText
+    private lateinit var etothersourcetext : EditText
 
     private var adapterSupportType: CheckboxListAdapter? = null
 
@@ -172,6 +174,7 @@ class HhForm2PerInfoFragment : BasicFormFragment(), HouseholdContract.Form2View,
         etOthersText = binding.etotherstext
         idType = binding.IdType
         etIdType = binding.etIDType
+        etothersourcetext =binding.etothersourcetext
         idType.gone()
         //publicRecycler = binding.recycler
         //directRecycler = binding.recycler
@@ -462,7 +465,9 @@ class HhForm2PerInfoFragment : BasicFormFragment(), HouseholdContract.Form2View,
         val form = HhForm2()
 
         if(spMainSourceOfIncome.selectedItem.toString().equals(IncomeSourceEnum.OTHER.toString(), ignoreCase = true)){
-            form.mainSourceOfIncome = binding.etothersourcetext.text.toString()
+            //form.mainSourceOfIncome = binding.etothersourcetext.text.toString()
+            //text validation
+            form.mainSourceOfIncome = chkEditText(etothersourcetext,UiData.ER_ET_DF)
             Log.d(TAG,"Entered Main Source of Income other with ${form.mainSourceOfIncome}")
         }else{
             form.mainSourceOfIncome = chkSpinner(spMainSourceOfIncome, UiData.ER_SP_DF)
@@ -471,7 +476,9 @@ class HhForm2PerInfoFragment : BasicFormFragment(), HouseholdContract.Form2View,
         //form.currency = chkSpinner(spCurrency, UiData.ER_SP_DF)
         form.gender = chkSpinner(spGender, UiData.ER_SP_DF)
         if(spRespondentRlt.selectedItem.toString().equals(RelationshipEnum.OTHER.value, ignoreCase = true)){
-            form.respondentRlt = etOthersText.text.toString()
+            //form.respondentRlt = etOthersText.text.toString()
+            //text validation
+            form.respondentRlt = chkEditText(etOthersText,UiData.ER_ET_DF)
         }else{
             form.respondentRlt = chkSpinner(spRespondentRlt, UiData.ER_SP_DF)
         }
@@ -495,7 +502,10 @@ class HhForm2PerInfoFragment : BasicFormFragment(), HouseholdContract.Form2View,
 
         if (binding.llIdTypeInput.isVisible && binding.llIdType.isVisible) {
             if (spIdType.selectedItem.toString().equals(IDtypeEnum.OTHERS.value, ignoreCase = true)){
-                form.idNumberType = etIdType.text.toString()
+               // form.idNumberType = etIdType.text.toString()
+                //id Other validation
+                form.idNumberType = chkEditText(etIdType,UiData.ER_ET_DF)
+
             }else{
                 form.idNumberType = chkSpinner(spIdType, UiData.ER_SP_DF)
             }

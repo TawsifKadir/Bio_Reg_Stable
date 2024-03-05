@@ -239,7 +239,9 @@ class NomineeInputFragment : BasicFormFragment(), NomineeModalContract.InputView
         nominee.nickName = chkEditTextNickName3Char(etNickName, UiData.ER_ET_DF)
         nominee.age = chkAge(etAge, UiData.ER_ET_DF)?.toInt()
         if(spRelation.selectedItem.toString().equals(RelationshipEnum.OTHER.value, ignoreCase = true)){
-            nominee.relation = etOtherRelation.text.toString()
+            //nominee.relation = etOtherRelation.text.toString()
+            //check Edittext validation
+            nominee.relation = chkEditText(etOtherRelation,UiData.ER_ET_DF)
         }else{
             nominee.relation = chkSpinner(spRelation, UiData.ER_SP_DF)
         }

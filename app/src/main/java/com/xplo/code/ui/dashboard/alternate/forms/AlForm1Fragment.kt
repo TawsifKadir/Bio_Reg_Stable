@@ -336,7 +336,9 @@ class AlForm1Fragment : BasicFormFragment(), AlternateContract.Form1View , Check
         //form.phoneNumber = chkPhoneNumber(etPhoneNo, UiData.ER_ET_DF)
         form.phoneNumber = etPhoneNo.text.toString()
         if(spAlternateRelation.selectedItem.toString().equals(RelationshipEnum.OTHER.value, ignoreCase = true)){
-            form.selectAlternateRlt = etothers.text.toString()
+            //form.selectAlternateRlt = etothers.text.toString()
+            //check other edit text
+            form.selectAlternateRlt = chkEditText(etothers,UiData.ER_ET_DF)
         }else{
             form.selectAlternateRlt = chkSpinner(spAlternateRelation, UiData.ER_SP_DF)
         }
@@ -346,7 +348,9 @@ class AlForm1Fragment : BasicFormFragment(), AlternateContract.Form1View , Check
 
         if (binding.llIdTypeInput.isVisible && binding.llIdType.isVisible) {
             if (spIdType.selectedItem.toString().equals(IDtypeEnum.OTHERS.value, ignoreCase = true)){
-                form.idNumberType = etIdType.text.toString()
+                //form.idNumberType = etIdType.text.toString()
+                //check Edit text
+                form.idNumberType = chkEditText(etIdType,UiData.ER_ET_DF)
             }else{
                 form.idNumberType = chkSpinner(spIdType, UiData.ER_SP_DF)
             }

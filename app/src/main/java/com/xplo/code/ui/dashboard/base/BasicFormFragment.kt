@@ -42,6 +42,7 @@ abstract class BasicFormFragment : BaseFragment(), BasicFormView {
     }
 
 
+
     override fun chkAge(editText: EditText, error: String?): String? {
         val txt = editText.text.toString()
         if (isValidationEnabled()) {
