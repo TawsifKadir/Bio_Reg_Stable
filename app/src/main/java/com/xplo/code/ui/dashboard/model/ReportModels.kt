@@ -141,6 +141,7 @@ fun List<Finger>?.getReportRows(): List<ReportRow> {
 
 
 
+
     //if (finger == null) return items
 
     items.add(
