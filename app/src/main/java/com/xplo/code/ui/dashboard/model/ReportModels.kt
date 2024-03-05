@@ -1,6 +1,4 @@
 package com.xplo.code.ui.dashboard.model
-
-import android.util.Log
 import com.xplo.code.core.ext.toBool
 
 
