@@ -449,7 +449,7 @@
 
                     <TextView
                         style="@style/AppTextView.Input.Header"
-                        android:text="@string/respondent_spouse_first_name_min_3_letters" />
+                        android:text="@string/respondent_spouse_first_name" />
 
                     <EditText
                         android:id="@+id/etSpouseFirstName"
@@ -489,7 +489,7 @@
 
                     <TextView
                         style="@style/AppTextView.Input.Header"
-                        android:text="@string/respondent_spouse_last_name_min_3_letters" />
+                        android:text="@string/respondent_spouse_last_name" />
 
                     <EditText
                         android:id="@+id/etSpouseLastName"
@@ -503,7 +503,7 @@
 
                     <TextView
                         style="@style/AppTextView.Input.Header"
-                        android:text="@string/respondent_spouse_nick_name_min_3_letters" />
+                        android:text="@string/respondent_spouse_nick_name" />
 
                     <EditText
                         android:id="@+id/etSpouseNickName"
